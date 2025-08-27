@@ -1,0 +1,77 @@
+KPIs
+
+Applicant’s Personal & Employment Details
+
+# Average Age by LoanApproved
+print(df.groupby('LoanApproved')['Age'].mean())
+
+# Approval rate by MaritalStatus
+print(df.groupby('MaritalStatus')['LoanApproved'].mean())
+
+# Approval rate by EmploymentStatus
+print(df.groupby('EmploymentStatus')['LoanApproved'].mean())
+
+# Average Experience by LoanApproved
+print(df.groupby('LoanApproved')['Experience'].mean())
+
+
+
+Applicant’s Financial Profile
+
+# Average AnnualIncome by LoanApproved
+print(df.groupby('LoanApproved')['AnnualIncome'].mean())
+
+# Average NetWorth by LoanApproved
+print(df.groupby('LoanApproved')['NetWorth'].mean())
+
+# Average Savings & Checking Balances by LoanApproved
+print(df.groupby('LoanApproved')[['SavingsAccountBalance','CheckingAccountBalance']].mean())
+
+# Average MonthlyDebtPayments by LoanApproved
+print(df.groupby('LoanApproved')['MonthlyDebtPayments'].mean())
+
+
+Applicant’s Credit History
+
+# Average CreditScore by LoanApproved
+print(df.groupby('LoanApproved')['CreditScore'].mean())
+
+# % with PreviousLoanDefaults by LoanApproved
+print(df.groupby('LoanApproved')['PreviousLoanDefaults'].mean())
+
+# % with BankruptcyHistory by LoanApproved
+print(df.groupby('LoanApproved')['BankruptcyHistory'].mean())
+
+# Average CreditCardUtilizationRate by LoanApproved
+print(df.groupby('LoanApproved')['CreditCardUtilizationRate'].mean())
+
+
+Loan Details
+
+# Average LoanAmount by LoanApproved
+print(df.groupby('LoanApproved')['LoanAmount'].mean())
+
+# Approval rate by LoanPurpose
+print(df.groupby('LoanPurpose')['LoanApproved'].mean())
+
+# Average LoanDuration by LoanApproved
+print(df.groupby('LoanApproved')['LoanDuration'].mean())
+
+# Average MonthlyLoanPayment by LoanApproved
+print(df.groupby('LoanApproved')['MonthlyLoanPayment'].mean())
+
+
+Bank’s Calculated Metrics & Decision
+
+# Overall Approval Rate
+approval_rate = df['LoanApproved'].mean()
+print("Approval Rate:", approval_rate)
+
+# Average TotalDebtToIncomeRatio by LoanApproved
+print(df.groupby('LoanApproved')['TotalDebtToIncomeRatio'].mean())
+
+# Average RiskScore by LoanApproved
+print(df.groupby('LoanApproved')['RiskScore'].mean())
+
+# Average InterestRate by LoanApproved
+print(df.groupby('LoanApproved')['InterestRate'].mean())
