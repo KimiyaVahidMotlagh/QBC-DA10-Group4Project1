@@ -30,6 +30,12 @@ print(df.groupby('LoanApproved')[['SavingsAccountBalance','CheckingAccountBalanc
 # Average MonthlyDebtPayments by LoanApproved
 print(df.groupby('LoanApproved')['MonthlyDebtPayments'].mean())
 
+df['DTI_Ratio'] = df['MonthlyDebtPayments'] / df['MonthlyIncome']
+df['Liquidity_Ratio'] = (df['SavingsAccountBalance'] + df['CheckingAccountBalance']) / df['MonthlyDebtPayments']
+df['Asset_to_Liability_Ratio'] = df['TotalAssets'] / df['TotalLiabilities']
+df['Savings_to_Income_Ratio'] = df['SavingsAccountBalance'] / df['AnnualIncome']
+df['NetWorth_to_Income_Ratio'] = df['NetWorth'] / df['AnnualIncome']
+
 
 Applicant’s Credit History
 
